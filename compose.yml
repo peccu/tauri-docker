@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  tauri:
+    build: build
+    container_name: tauri
+    entrypoint: sleep infinity
+    # env_file:
+    #   - .env
+    logging:
+      options:
+        max-size: "10k"
+    restart: always
+    stop_signal: SIGKILL
+    volumes:
+      - ./app:/app
+    working_dir: /app
