@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   tauri:
-    build: build
+    # build: build
+    image: ghcr.io/peccu/tauri-docker:main
     container_name: tauri
     entrypoint: sleep infinity
     # env_file:

@@ -18,6 +18,10 @@ RUN apt-get update \
 RUN curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
 RUN /root/.cargo/bin/rustup update
 
+# instal node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_21.x | bash - \
+    && apt-get install -y nodejs
+
 # install bun
 RUN apt-get install -y unzip
 RUN curl -fsSL https://bun.sh/install | bash
